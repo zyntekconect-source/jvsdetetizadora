@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JVS Dedetizadora | Controle Especializado de Pragas e Desratização no PR</title>
+  
+  <meta name="description" content="JVS Dedetizadora: dedetização, desratização e limpeza de caixas d'água com laudos técnicos e licença sanitária em 8 cidades do Paraná. Fale com nossa equipe técnica.">
+  <meta name="theme-color" content="#0A192F">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="JVS Dedetizadora | Controle Profissional de Pragas Urbanas">
+  <meta property="og:description" content="Dedetização, desratização e higienização com produtos ANVISA e laudos sanitários no Paraná.">
+  <meta property="og:image" content="https://jvsdetetizadora.vercel.app/assets/img/sobre-picape.jpg">
+
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "JVS Dedetizadora",
+    "description": "Dedetização, desratização e limpeza de caixa d'água com laudo técnico e licença sanitária.",
+    "telephone": ["+55-44-99123-6675", "+55-44-99963-7441"],
+    "areaServed": [
+      {"@type": "City", "name": "Ubiratã"},
+      {"@type": "City", "name": "Campina da Lagoa"},
+      {"@type": "City", "name": "Juranda"},
+      {"@type": "City", "name": "Tapejara"},
+      {"@type": "City", "name": "Terra Boa"},
+      {"@type": "City", "name": "Nova Esperança"},
+      {"@type": "City", "name": "Cianorte"},
+      {"@type": "City", "name": "Mariluz"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Canvas Tecnológico de Proteção Ativa (Fundo) -->
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Barra de Leitura Superior -->
+  <div class="scroll-progress-bar" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Acessibilidade -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <!-- Biblioteca Completa de Ícones Vetoriais SVG (Com Pragas Exclusivas) -->
+  <svg width="0" height="0" style="position:absolute; display:none" aria-hidden="true">
+    <defs>
+      <!-- Ícones Básicos -->
+      <symbol id="bug" viewBox="0 0 24 24"><path d="M8 2l1.9 1.9M16 2l-1.9 1.9M9 7.1V6a3 3 0 0 1 6 0v1.1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6z"/><path d="M12 20v-9M6.5 13H2M17.5 13H22M3 21c0-2.1 1.7-3.9 3.8-4M21 21c0-2.1-1.7-3.9-3.8-4M6 8C4 8 2.2 6.2 2 4M18 8c2 0 3.8-1.8 4-4"/></symbol>
+      <symbol id="drop" viewBox="0 0 24 24"><path d="M12 2.7l5.7 5.6a8 8 0 1 1-11.4 0z"/></symbol>
+      <symbol id="doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></symbol>
+      <symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+      <symbol id="phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="ok" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+      <symbol id="home" viewBox="0 0 24 24"><path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+      <symbol id="store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></symbol>
+      <symbol id="factory" viewBox="0 0 24 24"><path d="M2 20V8l6 4V8l6 4V4h4v16z"/><path d="M2 20h20"/></symbol>
+      <symbol id="build" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+      <symbol id="alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+      <symbol id="leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.5 6-6.5"/></symbol>
+      <symbol id="down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+      <symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+      <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+      <symbol id="burst" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></symbol>
+      <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+      <symbol id="instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+      <symbol id="sparkles" viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1"/></symbol>
+
+      <!-- Redes e Contatos -->
+      <symbol id="wa" viewBox="0 0 24 24"><path stroke="none" fill="currentColor" d="M.057 24l1.687-6.163a11.87 11.87 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></symbol>
+
+      <!-- Ícones Vetoriais Anatômicos das Pragas (Profissionais) -->
+      <symbol id="pest-roach" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="14" rx="4.5" ry="6.5"/>
+        <circle cx="12" cy="5.5" r="2.2"/>
+        <path d="M10.5 4C8.5 2 7 1.5 5 1.5M13.5 4c2-2 3.5-2.5 5.5-2.5"/>
+        <path d="M8 10L3 8M8 14H2.5M8.5 18l-5 3M16 10l5-2M16 14h5.5M15.5 18l5 3"/>
+      </symbol>
+      
+      <symbol id="pest-ant" viewBox="0 0 24 24">
+        <circle cx="12" cy="4" r="2"/>
+        <ellipse cx="12" cy="10" rx="1.8" ry="2.2"/>
+        <ellipse cx="12" cy="18" rx="3" ry="4"/>
+        <path d="M10.5 3C9 1.8 7.5 1.5 6 1.5M13.5 3c1.5-1.2 3-1.5 4.5-1.5"/>
+        <path d="M10 9L4 7M10 11L4 12M10 12L4 16M14 9l6-2M14 11l6 1M14 12l6 4"/>
+      </symbol>
+
+      <symbol id="pest-scorpion" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="13" rx="3.5" ry="5"/>
+        <path d="M12 8V4c0-2 2-3 4-2s2 3 0 4"/>
+        <path d="M9 11L5 8l-2 2M15 11l4-3 2 2"/>
+        <path d="M9 14l-4 1M9 16l-3 3M15 14l4 1M15 16l3 3"/>
+      </symbol>
+
+      <symbol id="pest-spider" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="2.5"/>
+        <ellipse cx="12" cy="15" rx="3.5" ry="4.5"/>
+        <path d="M10 7L5 4M10 8L3 8M10 9L4 13M10 10L6 17M14 7l5-3M14 8l7 0M14 9l6 4M14 10l4 7"/>
+      </symbol>
+
+      <symbol id="pest-termite" viewBox="0 0 24 24">
+        <circle cx="12" cy="5" r="2"/>
+        <ellipse cx="12" cy="11" rx="2.2" ry="3"/>
+        <ellipse cx="12" cy="18" rx="3.5" ry="4.5"/>
+        <path d="M11 3.5l-3-2M13 3.5l3-2M9 10l-4-2M9 12l-4 1M15 10l4-2M15 12l4 1"/>
+      </symbol>
+
+      <symbol id="pest-rat" viewBox="0 0 24 24">
+        <path d="M3 16c0-3.5 3-7 8-7 3 0 5 1 7 3l3 1-3 2c-1 2.5-3 3-6 3H8c-3 0-5-.5-5-2z"/>
+        <circle cx="17.5" cy="12.5" r=".6"/>
+        <path d="M11 9c0-2 1-3.5 3-3.5S16 7 15.5 9M3 16c-1.5 0-2 1.5-2 3"/>
+      </symbol>
+
+      <symbol id="pest-mosquito" viewBox="0 0 24 24">
+        <line x1="12" y1="12" x2="12" y2="21"/>
+        <ellipse cx="12" cy="8" rx="1.5" ry="3"/>
+        <path d="M12 5l-2-3M12 5l2-3M12 8l-7-3M12 8l7-3M12 11l-8 3M12 11l8 3M12 14l-6 6M12 14l6 6"/>
+      </symbol>
+
+      <symbol id="roach" viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="4.6" ry="7" stroke="none"/><circle cx="12" cy="6" r="2.4" stroke="none"/><path fill="none" stroke-width="1.1" stroke-linecap="round" d="M11 4C9 2 8 1.5 6 1.5M13 4c2-2 3-2.5 5-2.5M8 10L3 8M8 14H2.5M8.5 18l-5 3M16 10l5-2M16 14h5.5M15.5 18l5 3"/></symbol>
+      <symbol id="risk-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol>
+      <symbol id="risk-high" viewBox="0 0 24 24"><path d="M7.9 2h8.2L22 7.9v8.2L16.1 22H7.9L2 16.1V7.9z"/><path d="M12 7v6M12 16.5h.01"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- Cabeçalho Principal -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="#inicio" class="brand" aria-label="JVS Dedetizadora - Início">
+        <img class="brand-logo" src="assets/img/logo.png" alt="Logotipo JVS Dedetizadora" width="36" height="52">
+        <span class="brand-text">
+          JVS Dedetizadora
+          <small>Controle de pragas urbanas</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação primária">
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#processo" class="nav-link">Processo</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+        <a href="#calculadora" class="nav-link">Calculadora</a>
+        <a href="#atuacao" class="nav-link">Cidades</a>
+        <a href="#faq" class="nav-link">Dúvidas</a>
+      </nav>
+
+      <div class="header-cta-group">
+        <button class="btn btn-primary btn-walk open-hub-trigger" type="button">
+          <span class="walker" aria-hidden="true"><svg class="roach"><use href="#roach"/></svg></span>
+          <svg class="ic"><use href="#chat"/></svg>
+          <span>Central de Atendimento</span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu móvel" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="ic ic-menu"><use href="#menu"/></svg>
+          <svg class="ic ic-close"><use href="#close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Moderno -->
+  <div class="mobile-menu-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navegação móvel">
+    <div class="mobile-menu-header">
+      <span class="mobile-title">JVS Dedetizadora</span>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="#sobre" class="mob-link">Sobre nós</a>
+      <a href="#servicos" class="mob-link">Serviços e Pragas</a>
+      <a href="#processo" class="mob-link">Como Trabalhamos</a>
+      <a href="#galeria" class="mob-link">Nossos Serviços em Campo</a>
+      <a href="#calculadora" class="mob-link">Calculadora de Risco</a>
+      <a href="#atuacao" class="mob-link">Cidades Atendidas</a>
+      <a href="#faq" class="mob-link">Perguntas Frequentes</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <button class="btn btn-primary w-full open-hub-trigger" type="button">
+        <svg class="ic"><use href="#chat"/></svg>
+        <span>Abrir Central de Suporte</span>
+      </button>
+      <div class="mobile-contact-info">
+        <p><svg class="ic"><use href="#phone"/></svg> (44) 99123-6675</p>
+        <small>Plantão com Marcelo</small>
+      </div>
+    </div>
+  </div>
+
+  <main id="conteudo">
+    <!-- Seção Hero -->
+    <section class="hero" id="inicio">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+        
+
+          </div>
+
+          <h1 class="reveal">
+            Proteção definitiva para sua casa e empresa contra 
+            <span class="typed-wrapper"><span class="hero-typed" id="typed"></span></span>
+          </h1>
+
+          <p class="hero-description reveal">
+            Dedetização, desratização e limpeza de caixa d'água com equipe uniformizada, equipamentos profissionais e laudo técnico com licença sanitária.
+          </p>
+
+          <div class="hero-actions reveal">
+            <button class="btn btn-primary btn-large btn-glow btn-walk open-hub-trigger" type="button">
+              <span class="walker" aria-hidden="true"><svg class="roach"><use href="#roach"/></svg></span>
+              <svg class="ic"><use href="#wa"/></svg>
+              <span>Solicitar Orçamento Agora</span>
+            </button>
+            <a class="btn btn-glass btn-large" href="#calculadora">
+              <svg class="ic"><use href="#search"/></svg>
+              <span>Calcular Risco do Meu Imóvel</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-bar reveal">
+            <div class="trust-item">
+              <div class="trust-icon"><svg class="ic"><use href="#doc"/></svg></div>
+              <div class="trust-text"><strong>Laudos Técnicos</strong><span>Com licença sanitária</span></div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon"><svg class="ic"><use href="#shield"/></svg></div>
+              <div class="trust-text"><strong>Produtos Homologados</strong><span>Com registro e garantia da ANVISA</span></div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon"><svg class="ic"><use href="#clock"/></svg></div>
+              <div class="trust-text"><strong>Atendimento Rápido</strong><span>Agendamento ágil e pontual</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Infinito -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track"></div>
+    </div>
+
+    <!-- Seção Sobre Nós -->
+    <section class="section section-about" id="sobre">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <div class="about-image-wrapper">
+              <img src="assets/img/sobre-picape.jpg" alt="Picape da JVS Dedetizadora com escada, mangueira e pulverizador costal" width="1400" height="1050" loading="lazy">
+              <div class="about-image-badge">
+                <svg class="ic"><use href="#shield"/></svg>
+                <span>Frota própria e equipamentos profissionais</span>
+              </div>
+            </div>
+            <div class="about-floating-stat">
+              <strong class="stat-number">100%</strong>
+              <span class="stat-label">Conformidade e Laudos Oficiais</span>
+            </div>
+          </div>
+
+          <div class="about-text-content reveal">
+            <div class="badge-pill">
+              <svg class="ic"><use href="#shield"/></svg>
+              <span>Quem Somos</span>
+            </div>
+            <h2 class="section-title">Controle de pragas urbanas com responsabilidade técnica</h2>
+            <p class="lead-text">
+              A JVS Dedetizadora atua na prevenção e no combate de pragas em residências, comércios, indústrias e condomínios com métodos sustentáveis e alta precisão.
+            </p>
+            <p>
+              Nossa equipe trabalha com EPI completo, produtos registrados na ANVISA e emite laudo técnico com licença sanitária, o que garante segurança absoluta para você e total tranquilidade diante de fiscalizações.
+            </p>
+
+            <ul class="checklist-pro">
+              <li>
+                <div class="check-icon"><svg class="ic"><use href="#ok"/></svg></div>
+                <div><strong>Inspeção prévia minuciosa:</strong> Definimos o método correto para cada ambiente.</div>
+              </li>
+              <li>
+                <div class="check-icon"><svg class="ic"><use href="#ok"/></svg></div>
+                <div><strong>Tecnologia:</strong> Uso de bombas elétricas e aplicação de gel sem odor, com mais precisão e conforto.</div>
+              </li>
+              <li>
+                <div class="check-icon"><svg class="ic"><use href="#ok"/></svg></div>
+                <div><strong>Conformidade legal:</strong> Certificados válidos perante a Vigilância Sanitária.</div>
+              </li>
+            </ul>
+
+            <div class="about-cta-box">
+              <button class="btn btn-outline-dark open-hub-trigger" type="button">
+                <svg class="ic"><use href="#chat"/></svg>
+                <span>Falar com o Marcelo</span>
+              </button>
+              <span class="consultor-note">Atendimento direto e personalizado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Serviços: Com Ícones Vetoriais das Pragas -->
+    <section class="section section-services" id="servicos">
+      <div class="container">
+        <div class="section-head text-center reveal">
+          <div class="badge-pill">
+            <svg class="ic"><use href="#bug"/></svg>
+            <span>Nossos Serviços</span>
+          </div>
+          <h2 class="section-title">Soluções Completas para Cada Desafio</h2>
+          <p class="section-subtitle">Do tratamento preventivo ao controle de infestações já instaladas.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1: Dedetização -->
+          <article class="service-card reveal">
+            <div class="service-header">
+              <div class="service-icon-box"><svg class="ic"><use href="#pest-roach"/></svg></div>
+              <span class="service-tag">Mais Solicitado</span>
+            </div>
+            <h3>Dedetização</h3>
+            <p>Controle de insetos rasteiros e voadores com barreira química residual e aplicação dirigida em frestas, ralos e áreas críticas.</p>
+            
+            <!-- Lista com Ícones Vetoriais Dedicados -->
+            <ul class="service-pest-list">
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#pest-roach"/></svg></div>
+                <span>Baratas e Formigas</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#pest-scorpion"/></svg></div>
+                <span>Escorpiões e Aranhas</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#pest-termite"/></svg></div>
+                <span>Cupins, Pulgas e Carrapatos</span>
+              </li>
+            </ul>
+
+            <div class="service-footer">
+              <button class="service-link open-hub-trigger" type="button">
+                <span>Orçamento rápido</span>
+                <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Desratização -->
+          <article class="service-card reveal">
+            <div class="service-header">
+              <div class="service-icon-box"><svg class="ic"><use href="#pest-rat"/></svg></div>
+              <span class="service-tag">Alto Risco</span>
+            </div>
+            <h3>Desratização</h3>
+            <p>Controle estratégico de roedores com vistoria técnica, porta-iscas blindados com chave e orientação preventiva de vedação.</p>
+            
+            <ul class="service-pest-list">
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#pest-rat"/></svg></div>
+                <span>Ratos e Camundongos</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#shield"/></svg></div>
+                <span>Monitoramento Seguro de Iscas</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#ok"/></svg></div>
+                <span>Orientação Preventiva de Acessos</span>
+              </li>
+            </ul>
+
+            <div class="service-footer">
+              <button class="service-link open-hub-trigger" type="button">
+                <span>Orçamento rápido</span>
+                <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Limpeza de Caixa d'Água -->
+          <article class="service-card reveal">
+            <div class="service-header">
+              <div class="service-icon-box"><svg class="ic"><use href="#drop"/></svg></div>
+              <span class="service-tag">Saúde</span>
+            </div>
+            <h3>Limpeza de Caixa d'Água</h3>
+            <p>Higienização profunda e desinfecção bactericida para garantir água limpa, transparente e segura em seu imóvel.</p>
+            
+            <ul class="service-pest-list">
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#drop"/></svg></div>
+                <span>Lavagem e Desinfecção</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#home"/></svg></div>
+                <span>Residências, Comércios e Indústrias</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#doc"/></svg></div>
+                <span>Comprovante e Registro Oficial</span>
+              </li>
+            </ul>
+
+            <div class="service-footer">
+              <button class="service-link open-hub-trigger" type="button">
+                <span>Orçamento rápido</span>
+                <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 4: Laudos Técnicos -->
+          <article class="service-card reveal">
+            <div class="service-header">
+              <div class="service-icon-box"><svg class="ic"><use href="#doc"/></svg></div>
+              <span class="service-tag">Legislação</span>
+            </div>
+            <h3>Laudos e Licença Sanitária</h3>
+            <p>Fornecemos documentação técnica com licença sanitária para estabelecimentos comerciais, condomínios e indústrias.</p>
+            
+            <ul class="service-pest-list">
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#store"/></svg></div>
+                <span>Comércios, Restaurantes e Indústrias</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#build"/></svg></div>
+                <span>Condomínios e Escolas</span>
+              </li>
+              <li>
+                <div class="pest-mini-icon"><svg class="ic"><use href="#shield"/></svg></div>
+                <span>Apoio Completo em Fiscalizações</span>
+              </li>
+            </ul>
+
+            <div class="service-footer">
+              <button class="service-link open-hub-trigger" type="button">
+                <span>Orçamento rápido</span>
+                <span class="arrow">&rarr;</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Catálogo Vetorial de Pragas Combatidas -->
+        <div class="pest-vetor-grid reveal">
+          <span class="pest-catalog-title">Pragas Urbanas Combatidas com Eficácia:</span>
+          <div class="pest-badges-row">
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-roach"/></svg>
+              <span>Baratas</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-ant"/></svg>
+              <span>Formigas</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-scorpion"/></svg>
+              <span>Escorpiões</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-spider"/></svg>
+              <span>Aranhas</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-termite"/></svg>
+              <span>Cupins</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-rat"/></svg>
+              <span>Ratos</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#bug"/></svg>
+              <span>Pulgas & Carrapatos</span>
+            </div>
+            <div class="pest-badge-item">
+              <svg class="ic"><use href="#pest-mosquito"/></svg>
+              <span>Mosquitos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Processo de Trabalho -->
+    <section class="section section-process" id="processo">
+      <div class="process-decor-circle" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-head text-center reveal">
+          <div class="badge-pill badge-pill-light">
+            <svg class="ic"><use href="#burst"/></svg>
+            <span>Como Trabalhamos</span>
+          </div>
+          <h2 class="section-title text-white">Do contato ao pós-serviço em 4 etapas</h2>
+          <p class="section-subtitle text-light">Um processo simples, transparente e sem surpresas.</p>
+        </div>
+
+        <div class="process-timeline" id="processTimeline">
+          <div class="timeline-step reveal" style="--i:0">
+            <div class="step-badge">
+              <div class="step-num">01</div>
+              <div class="step-icon"><svg class="ic"><use href="#phone"/></svg></div>
+            </div>
+            <div class="step-card">
+              <h3>1. Contato</h3>
+              <p>Você chama no WhatsApp ou na nossa central e conta o que está acontecendo no seu imóvel.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" style="--i:1">
+            <div class="step-badge">
+              <div class="step-num">02</div>
+              <div class="step-icon"><svg class="ic"><use href="#search"/></svg></div>
+            </div>
+            <div class="step-card">
+              <h3>2. Inspeção</h3>
+              <p>Identificamos a praga, os focos de ninho e o método com menor impacto para sua rotina.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" style="--i:2">
+            <div class="step-badge">
+              <div class="step-num">03</div>
+              <div class="step-icon"><svg class="ic"><use href="#burst"/></svg></div>
+            </div>
+            <div class="step-card">
+              <h3>3. Aplicação</h3>
+              <p>Equipe com EPI aplica o tratamento com total segurança, precisão e responsabilidade.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal" style="--i:3">
+            <div class="step-badge">
+              <div class="step-num">04</div>
+              <div class="step-icon"><svg class="ic"><use href="#cal"/></svg></div>
+            </div>
+            <div class="step-card">
+              <h3>4. Acompanhamento</h3>
+              <p>Orientações pós-serviço, emissão dos laudos e agendamento do retorno preventivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Galeria: Com Animações 3D Tilt e Efeito Spotlight -->
+    <section class="section section-gallery" id="galeria">
+      <div class="container">
+        <div class="section-head text-center reveal">
+          <div class="badge-pill">
+            <svg class="ic"><use href="#shield"/></svg>
+            <span>Nosso Trabalho</span>
+          </div>
+          <h2 class="section-title">Treinamento, equipamentos e equipe em ação</h2>
+          <p class="section-subtitle">Passe o cursor sobre os cards para ver a tecnologia e dedicação da JVS.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Card 1: 3D Tilt -->
+          <article class="gallery-card tilt-card reveal">
+            <div class="tilt-glow"></div>
+            <div class="gallery-img-box">
+              <img src="assets/img/trabalho-treinamento.jpg" alt="Técnico da JVS com máscara e luvas pulverizando em ambiente industrial" loading="lazy" style="object-position:center 35%">
+              <div class="gallery-tag">EPI Nível Máximo</div>
+            </div>
+            <div class="gallery-body">
+              <h3><svg class="ic"><use href="#doc"/></svg> Treinamento</h3>
+              <p>Equipe orientada a aplicar cada produto com técnica, EPI e total atenção às particularidades do local.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: 3D Tilt -->
+          <article class="gallery-card tilt-card reveal">
+            <div class="tilt-glow"></div>
+            <div class="gallery-img-box">
+              <img src="assets/img/trabalho-equipamentos.jpg" alt="Balde de iscas, porta-isca e furadeira da JVS" loading="lazy">
+              <div class="gallery-tag">Equipamentos Próprios</div>
+            </div>
+            <div class="gallery-body">
+              <h3><svg class="ic"><use href="#burst"/></svg> Equipamentos</h3>
+              <p>Iscas, porta-iscas, ferramentas e pulverizadores próprios para cada tipo de serviço.</p>
+            </div>
+          </article>
+
+          <!-- Card 3: 3D Tilt -->
+          <article class="gallery-card tilt-card reveal">
+            <div class="tilt-glow"></div>
+            <div class="gallery-img-box">
+              <img src="assets/img/trabalho-equipe.jpg" alt="Técnico da JVS com touca e luvas aplicando gel em armário de cozinha" loading="lazy" style="object-position:center 30%">
+              <div class="gallery-tag">Aplicação Discreta</div>
+            </div>
+            <div class="gallery-body">
+              <h3><svg class="ic"><use href="#shield"/></svg> Equipe</h3>
+              <p>Técnicos uniformizados e identificados com a marca JVS, do preparo até o término da aplicação.</p>
+            </div>
+          </article>
+
+          <!-- Card 4: 3D Tilt -->
+          <article class="gallery-card tilt-card reveal">
+            <div class="tilt-glow"></div>
+            <div class="gallery-img-box">
+              <img src="assets/img/trabalho-atendimento.jpg" alt="Fachada da JVS Dedetizadora com serviços e telefones na vitrine" loading="lazy" style="object-position:center 72%">
+              <div class="gallery-tag">Atendimento Direto</div>
+            </div>
+            <div class="gallery-body">
+              <h3><svg class="ic"><use href="#phone"/></svg> Atendimento Personalizado</h3>
+              <p>Você fala direto com o Marcelo, do primeiro contato até a confirmação e garantia do serviço.</p>
+            </div>
+          </article>
+
+          <!-- Card Amplo com 4 fotos das áreas -->
+          <article class="gallery-card gallery-card-wide tilt-card reveal">
+            <div class="tilt-glow"></div>
+            <div class="gallery-multi-photos">
+              <div class="multi-photo-item">
+                <img src="assets/img/area-forro.jpg" alt="Técnico aplicando produto no forro de um telhado" loading="lazy">
+                <span>Forros e Telhados</span>
+              </div>
+              <div class="multi-photo-item">
+                <img src="assets/img/area-caixa-concreto.jpg" alt="Caixa d'água de concreto aberta para limpeza" loading="lazy">
+                <span>Caixas de Concreto</span>
+              </div>
+              <div class="multi-photo-item">
+                <img src="assets/img/area-caixa-telhado.jpg" alt="Caixa d'água azul sob telhado" loading="lazy">
+                <span>Caixas Residenciais</span>
+              </div>
+              <div class="multi-photo-item">
+                <img src="assets/img/area-torre.jpg" alt="Torre de caixa d'água com equipamento de limpeza" loading="lazy">
+                <span>Torres e Reservatórios</span>
+              </div>
+            </div>
+            <div class="gallery-body">
+              <h3><svg class="ic"><use href="#pin"/></svg> Área de aplicação</h3>
+              <p>Residências, comércios, indústrias e reservatórios: forros, cozinhas, áreas externas e caixas d'água.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Calculadora de Risco -->
+    <section class="section section-calculator" id="calculadora" data-risk="medio">
+      <div class="radar-scan" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="roaches bg-layer" id="bg-roaches" aria-hidden="true"></div>
+
+      <div class="container relative-z">
+        <div class="section-head text-center reveal">
+          <div class="badge-pill">
+            <svg class="ic"><use href="#alert"/></svg>
+            <span>Diagnóstico Instantâneo</span>
+          </div>
+          <h2 class="section-title">Calculadora de risco de infestação</h2>
+          <p class="section-subtitle">Responda 3 perguntas e veja a vulnerabilidade do seu imóvel.</p>
+        </div>
+
+        <div class="calculator-card reveal">
+          <div class="calculator-layout">
+            <div class="calculator-form">
+              <!-- Pergunta 1 -->
+              <div class="calc-question">
+                <div class="question-header">
+                  <span class="q-number">1</span>
+                  <h4>Qual o tipo do imóvel?</h4>
+                </div>
+                <div class="option-group" id="q-type" role="radiogroup">
+                  <button type="button" class="calc-option is-selected" aria-pressed="true" data-points="20">
+                    <svg class="ic"><use href="#home"/></svg>
+                    <span>Residencial</span>
+                  </button>
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="35">
+                    <svg class="ic"><use href="#store"/></svg>
+                    <span>Comercial</span>
+                  </button>
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="35">
+                    <svg class="ic"><use href="#factory"/></svg>
+                    <span>Industrial</span>
+                  </button>
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="25">
+                    <svg class="ic"><use href="#build"/></svg>
+                    <span>Condomínio</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pergunta 2 -->
+              <div class="calc-question">
+                <div class="question-header">
+                  <span class="q-number">2</span>
+                  <h4>Como é o entorno?</h4>
+                </div>
+                <div class="option-group" id="q-env" role="radiogroup">
+                  <button type="button" class="calc-option is-selected" aria-pressed="true" data-points="35">
+                    <svg class="ic"><use href="#alert"/></svg>
+                    <span>Terreno baldio ou entulho</span>
+                  </button>
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="10">
+                    <svg class="ic"><use href="#build"/></svg>
+                    <span>Centro urbano limpo</span>
+                  </button>
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="30">
+                    <svg class="ic"><use href="#leaf"/></svg>
+                    <span>Área rural ou mata</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pergunta 3 -->
+              <div class="calc-question">
+                <div class="question-header">
+                  <span class="q-number">3</span>
+                  <h4>Quando foi a última dedetização?</h4>
+                </div>
+                <div class="option-group" id="q-last" role="radiogroup">
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="0">
+                    <svg class="ic"><use href="#cal"/></svg>
+                    <span>Menos de 6 meses</span>
+                  </button>
+                  <button type="button" class="calc-option is-selected" aria-pressed="true" data-points="30">
+                    <svg class="ic"><use href="#cal"/></svg>
+                    <span>Mais de 1 ano</span>
+                  </button>
+                  <button type="button" class="calc-option" aria-pressed="false" data-points="40">
+                    <svg class="ic"><use href="#alert"/></svg>
+                    <span>Nunca dedetizei</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painel de Resultado -->
+            <div class="calculator-result" id="calcResultBox">
+              <div class="roaches" id="risk-roaches" aria-hidden="true"></div>
+              
+              <div class="result-header">
+                <div class="result-icon" id="risk-icon">
+                  <svg class="ic"><use href="#alert"/></svg>
+                </div>
+                <div class="result-badge-wrap">
+                  <span class="risk-pill" id="risk-pill" aria-live="polite">
+                    <b id="risk-label">RISCO MÉDIO</b>
+                  </span>
+                </div>
+              </div>
+
+              <div class="result-body">
+                <h3 id="risk-title">Atenção preventiva necessária</h3>
+                <div class="meter-wrapper">
+                  <div class="meter-bar-bg">
+                    <div class="meter-bar-fill" id="risk-bar" style="width: 85%;"></div>
+                  </div>
+                </div>
+                <p id="risk-text"></p>
+              </div>
+
+              <div class="result-footer">
+                <a class="btn btn-primary btn-calc-action" id="risk-whatsapp" href="#" target="_blank" rel="noopener">
+                  <svg class="ic"><use href="#wa"/></svg>
+                  <span>Agendar inspeção no WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Onde Atuamos -->
+    <section class="section section-coverage" id="atuacao">
+      <div class="container">
+        <div class="coverage-grid">
+          <div class="coverage-info reveal">
+            <div class="badge-pill">
+              <svg class="ic"><use href="#pin"/></svg>
+              <span>Onde Atuamos</span>
+            </div>
+            <h2 class="section-title">Atendemos 8 cidades do Paraná</h2>
+            <p>
+              Nossa equipe se desloca com frota própria até o seu endereço. Consulte a disponibilidade para a sua cidade.
+            </p>
+
+            <figure class="fleet-showcase">
+              <img src="assets/img/frota.jpg" alt="Duas utilitárias brancas da JVS Dedetizadora estacionadas" width="1200" height="800" loading="lazy">
+              <figcaption>
+                <svg class="ic"><use href="#ok"/></svg>
+                <span>Frota própria até o seu endereço</span>
+              </figcaption>
+            </figure>
+
+
+            <div class="city-action">
+              <a class="btn btn-primary" href="https://wa.me/5544991236675?text=Ol%C3%A1%2C%20voc%C3%AAs%20atendem%20na%20minha%20cidade%3F" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#pin"/></svg>
+                <span>Verificar minha cidade</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="coverage-map reveal">
+            <div class="map-card">
+              <iframe title="Mapa da região de atuação da JVS Dedetizadora" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Cianorte,+PR&z=9&hl=pt-BR&output=embed"></iframe>
+              <div class="map-badge">
+                <span class="pulse-dot"></span>
+                <span>Base em Cianorte e Cobertura Regional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Dúvidas Frequentes -->
+    <section class="section section-faq" id="faq">
+      <div class="container">
+        <div class="section-head text-center reveal">
+          <div class="badge-pill">
+            <svg class="ic"><use href="#search"/></svg>
+            <span>Dúvidas Frequentes</span>
+          </div>
+          <h2 class="section-title">Perguntas e respostas</h2>
+        </div>
+
+        <div class="faq-container reveal">
+          <div class="faq-accordion-item is-open">
+            <button type="button" class="faq-question" aria-expanded="true">
+              <span>Preciso sair de casa durante a dedetização?</span>
+              <div class="faq-icon-box"><svg class="ic"><use href="#down"/></svg></div>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer-content">
+                <p>Em geral, recomenda-se que pessoas e animais fiquem fora do ambiente durante a aplicação e por algumas horas depois. Nossa equipe orienta o tempo exato conforme o produto e o local.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Quais cidades vocês atendem?</span>
+              <div class="faq-icon-box"><svg class="ic"><use href="#down"/></svg></div>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer-content">
+                <p>Atendemos Ubiratã, Campina da Lagoa, Juranda, Tapejara, Terra Boa, Nova Esperança, Cianorte e Mariluz. Se a sua cidade não está na lista, chame no WhatsApp e consulte a disponibilidade.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Os produtos são seguros?</span>
+              <div class="faq-icon-box"><svg class="ic"><use href="#down"/></svg></div>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer-content">
+                <p>Utilizamos produtos registrados na ANVISA e aplicados por equipe com EPI, seguindo as orientações técnicas de uso e as recomendações pós-aplicação.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Vocês emitem laudo técnico?</span>
+              <div class="faq-icon-box"><svg class="ic"><use href="#down"/></svg></div>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer-content">
+                <p>Sim. Fornecemos laudos técnicos com licença sanitária, importantes para comércios, indústrias, condomínios e demais estabelecimentos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Com que frequência devo dedetizar?</span>
+              <div class="faq-icon-box"><svg class="ic"><use href="#down"/></svg></div>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer-content">
+                <p>Depende do local e do histórico de pragas. Para a maioria dos imóveis, a manutenção preventiva a cada 6 meses é uma boa referência. Use a calculadora ou fale conosco para uma indicação.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Como funciona a limpeza de caixa d'água?</span>
+              <div class="faq-icon-box"><svg class="ic"><use href="#down"/></svg></div>
+            </button>
+            <div class="faq-answer-wrapper">
+              <div class="faq-answer-content">
+                <p>Esvaziamos, lavamos e desinfetamos o reservatório, removendo resíduos e sujeira acumulada. Você recebe a confirmação do serviço realizado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Corporativo -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cta-card reveal">
+        <div class="cta-card-content">
+          <span class="cta-micro-badge">Orçamento Ágil</span>
+          <h2>Pragas não esperam. Fale com a JVS hoje.</h2>
+          <p>Orçamento rápido pelo WhatsApp ou na nossa central, sem compromisso.</p>
+        </div>
+        <div class="cta-card-action">
+          <a class="btn btn-primary btn-large" href="https://wa.me/5544991236675" target="_blank" rel="noopener">
+            <svg class="ic"><use href="#wa"/></svg>
+            <span>Chamar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-main-grid">
+        <div class="footer-col brand-col">
+          <a href="#inicio" class="brand footer-brand">
+            <img class="brand-logo" src="assets/img/logo.png" alt="" width="36" height="52">
+            <span>JVS Dedetizadora</span>
+          </a>
+          <p class="footer-desc">
+            Controle de pragas urbanas, desratização e limpeza de caixa d'água em Paraná e região.
+          </p>
+          <div class="status-tag">
+            <span class="pulse-dot"></span>
+            <span>Atendimento ativo e agendado</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#galeria">Nosso trabalho</a></li>
+            <li><a href="#calculadora">Calculadora</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul class="footer-links">
+            <li><span>Dedetização</span></li>
+            <li><span>Desratização</span></li>
+            <li><span>Limpeza de caixa d'água</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4>Contato</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg class="ic"><use href="#phone"/></svg>
+              <div>
+                <strong>Marcelo:</strong>
+                <a href="tel:+5544991236675">(44) 99123-6675</a>
+                <a href="tel:+5544999637441">(44) 99963-7441</a>
+              </div>
+            </li>
+            <li>
+              <svg class="ic"><use href="#pin"/></svg>
+              <div>
+                <strong>Região:</strong>
+                <span>Paraná e região</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; <span id="year"></span> JVS Dedetizadora. Todos os direitos reservados.</span>
+        <span>Desenvolvido por <strong>Zyntek</strong></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       NOVO: CENTRAL DE SUPORTE MULTICANAL & CHAT GUIADO (ITEM 1)
+       ======================================================== -->
+  <div class="support-hub-widget" id="supportHub">
+    <!-- Painel de Atendimento Aberto -->
+    <div class="hub-modal" id="hubModal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="hub-header">
+        <div class="hub-agent-info">
+          <div class="hub-avatar">
+            <span class="hub-online-dot"></span>
+            <svg class="ic"><use href="#shield"/></svg>
+          </div>
+          <div>
+            <strong>Marcelo • JVS Dedetizadora</strong>
+            <small>Atendimento Técnico Online</small>
+          </div>
+        </div>
+        <button class="hub-close" id="hubCloseBtn" aria-label="Fechar central de suporte">&times;</button>
+      </div>
+
+      <!-- Corpo da Central com Abas Rápidas -->
+      <div class="hub-body">
+        <!-- Canais de Contato Direto -->
+        <div class="hub-channels">
+          <a class="hub-channel-btn hub-btn-wa" href="https://wa.me/5544991236675?text=Ol%C3%A1%2C%20Marcelo%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20minha%20casa%2Fempresa." target="_blank" rel="noopener">
+            <svg class="ic"><use href="#wa"/></svg>
+            <div>
+              <strong>WhatsApp Direto</strong>
+              <small>Falar com Marcelo agora</small>
+            </div>
+            <span class="hub-arrow">&rarr;</span>
+          </a>
+
+          <a class="hub-channel-btn hub-btn-ig" href="https://instagram.com" target="_blank" rel="noopener">
+            <svg class="ic"><use href="#instagram"/></svg>
+            <div>
+              <strong>Instagram Oficial</strong>
+              <small>Acompanhe nossos trabalhos</small>
+            </div>
+            <span class="hub-arrow">&rarr;</span>
+          </a>
+
+          <a class="hub-channel-btn hub-btn-tel" href="tel:+5544991236675">
+            <svg class="ic"><use href="#phone"/></svg>
+            <div>
+              <strong>Ligar no Telefone</strong>
+              <small>(44) 99123-6675</small>
+            </div>
+            <span class="hub-arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Mini Assistente Interativo de Dúvidas -->
+        <div class="hub-chat-box">
+          <div class="chat-header-title">
+            <svg class="ic"><use href="#sparkles"/></svg>
+            <span>Tire Dúvidas Imediatas:</span>
+          </div>
+
+          <div class="chat-feed" id="chatFeed">
+            <div class="chat-msg bot-msg">
+              <p>Olá! Sou o assistente da JVS Dedetizadora. Selecione uma pergunta abaixo para ver a resposta imediata:</p>
+            </div>
+          </div>
+
+          <!-- Perguntas Pré-programadas -->
+          <div class="chat-quick-questions" id="chatQuickQuestions">
+            <button class="chat-q-btn" data-answer="O valor depende do tipo de praga, tamanho do imóvel e grau de infestação. Residências e comércios têm valores acessíveis com facilidade de pagamento. Toque no WhatsApp para receber o orçamento exato em 5 minutos!">
+              💰 Qual o valor médio da dedetização?
+            </button>
+            <button class="chat-q-btn" data-answer="Sim! Nossos produtos têm registro rigoroso na ANVISA. Para aplicação em gel, você nem precisa sair de casa. Para pulverização líquida, basta um intervalo seguro de 3 a 4 horas. Total segurança para sua família!">
+              🐾 É seguro para crianças e animais de estimação?
+            </button>
+            <button class="chat-q-btn" data-answer="Atendemos rotineiramente com frota própria: Ubiratã, Campina da Lagoa, Juranda, Tapejara, Terra Boa, Nova Esperança, Cianorte e Mariluz. Deslocamento rápido e pontual!">
+              📍 Vocês atendem minha cidade hoje?
+            </button>
+            <button class="chat-q-btn" data-answer="Sim! Emitimos o Certificado e Laudo Técnico com número de Licença Sanitária e Responsabilidade Técnica, atendendo plenamente à Vigilância Sanitária e auditorias.">
+              📋 Emitem laudo para a Vigilância Sanitária?
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub-footer">
+        <a class="btn btn-primary w-full" href="https://wa.me/5544991236675" target="_blank" rel="noopener">
+          <svg class="ic"><use href="#wa"/></svg>
+          <span>Falar com Atendente Humano</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Botão Acionador da Central (Substitui o botão comum do WhatsApp) -->
+    <button class="hub-fab-trigger" id="hubFabTrigger" aria-label="Abrir central de atendimento">
+      <span class="hub-fab-pulse"></span>
+      <div class="hub-fab-icon-box">
+        <svg class="ic ic-chat-main"><use href="#chat"/></svg>
+        <svg class="ic ic-close-main"><use href="#close"/></svg>
+      </div>
+      <div class="hub-fab-badge">
+        <span class="pulse-dot"></span>
+        <span>Atendimento JVS</span>
+      </div>
+    </button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
