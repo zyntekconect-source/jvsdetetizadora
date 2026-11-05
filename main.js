@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
-    window.addEventListener('resize', resize, { passive: true });
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    }, { passive: true });
     resize();
 
     // Criação de partículas com tons de biossegurança (laranja e ciano)
@@ -65,8 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fill();
       });
 
-      requestAnimationFrame(render);
+      if (!document.hidden) requestAnimationFrame(render);
     }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
     render();
   }
 
@@ -74,11 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
      2. Efeito 3D Tilt com Iluminação Spotlight nos Cards da Galeria
      ------------------------------------------------------------------------ */
   function initGallery3DTilt() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || !window.matchMedia('(hover: hover)').matches) return;
     const cards = $$('.tilt-card');
 
     cards.forEach(card => {
+      let frame = null;
       card.addEventListener('mousemove', (e) => {
+        if (frame) return;
+        frame = requestAnimationFrame(() => {
+        frame = null;
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -92,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
         card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
         card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+        });
       });
 
       card.addEventListener('mouseleave', () => {
@@ -117,7 +127,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = open !== undefined ? open : !hubWidget.classList.contains('is-open');
       hubWidget.classList.toggle('is-open', isOpen);
       fabTrigger.setAttribute('aria-expanded', String(isOpen));
+      const modal = $('#hubModal');
+      if (modal) modal.setAttribute('aria-hidden', String(!isOpen));
     };
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hubWidget.classList.contains('is-open')) {
+        toggleHub(false);
+        fabTrigger.focus();
+      }
+    });
 
     fabTrigger.addEventListener('click', () => toggleHub());
     if (closeBtn) closeBtn.addEventListener('click', () => toggleHub(false));
@@ -138,7 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Adiciona pergunta do usuário
         const userMsg = document.createElement('div');
         userMsg.className = 'chat-msg user-msg';
-        userMsg.innerHTML = `<p>${questionText}</p>`;
+        const userP = document.createElement('p');
+        userP.textContent = questionText;
+        userMsg.appendChild(userP);
         chatFeed.appendChild(userMsg);
 
         // Rola até o fim
@@ -148,7 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           const botMsg = document.createElement('div');
           botMsg.className = 'chat-msg bot-msg';
-          botMsg.innerHTML = `<p>${answerText}</p>`;
+          const botP = document.createElement('p');
+          botP.textContent = answerText;
+          botMsg.appendChild(botP);
           chatFeed.appendChild(botMsg);
           chatFeed.scrollTop = chatFeed.scrollHeight;
         }, 350);
@@ -219,6 +241,9 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleBtn.addEventListener('click', () => toggleMenu());
     if (backdrop) backdrop.addEventListener('click', () => toggleMenu(false));
     links.forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) toggleMenu(false);
+    });
   }
 
   /* ------------------------------------------------------------------------
@@ -294,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = [
       ['Baratas', 'pest-roach'], ['Formigas', 'pest-ant'], ['Escorpiões', 'pest-scorpion'],
       ['Cupins', 'pest-termite'], ['Ratos', 'pest-rat'], ['Aranhas', 'pest-spider'],
-      ['Caixa d\'Água', 'drop'], ['Laudo ANVISA', 'doc'], ['Mosquitos', 'pest-mosquito']
+      ['Caixa d\'Água', 'drop'], ['Produtos Regulamentados', 'shield'], ['Mosquitos', 'pest-mosquito']
     ];
 
     const html = [...items, ...items].map(([name, icon]) => `

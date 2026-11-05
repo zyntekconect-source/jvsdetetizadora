@@ -975,12 +975,11 @@ button {
 .section-gallery { background: #fff; }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
   perspective: 1000px;
 }
 .gallery-card {
-  grid-column: span 2;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -1008,8 +1007,9 @@ button {
 }
 .gallery-img-box {
   position: relative;
-  height: 250px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  background: var(--navy);
 }
 .gallery-img-box img {
   width: 100%;
@@ -1031,7 +1031,7 @@ button {
   font-weight: 700;
   z-index: 4;
 }
-.gallery-body { padding: 1.4rem 1.5rem; position: relative; z-index: 4; }
+.gallery-body { padding: 1.4rem 1.5rem; position: relative; z-index: 4; flex: 1; }
 .gallery-body h3 {
   font-size: 1.15rem;
   display: flex;
@@ -1041,35 +1041,6 @@ button {
 }
 .gallery-body h3 .ic { color: var(--acc); }
 .gallery-body p { font-size: 0.92rem; margin: 0; }
-.gallery-card-wide { grid-column: span 4; }
-.gallery-multi-photos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  height: 250px;
-  gap: 2px;
-  background: var(--navy);
-  overflow: hidden;
-}
-.multi-photo-item { position: relative; overflow: hidden; }
-.multi-photo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s var(--ease);
-}
-.multi-photo-item:hover img { transform: scale(1.1); }
-.multi-photo-item span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(10, 25, 47, 0.85));
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 1rem 0.5rem 0.4rem;
-  text-align: center;
-}
 
 /* ---------- 11. Calculadora de Risco ---------- */
 .section-calculator {
@@ -1572,10 +1543,13 @@ button {
   overflow: hidden;
   transform: scale(0.9) translateY(20px);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: all 0.35s var(--ease);
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease), visibility 0s linear 0.35s;
 }
 .support-hub-widget.is-open .hub-modal {
+  visibility: visible;
+  transition-delay: 0s;
   transform: scale(1) translateY(0);
   opacity: 1;
   pointer-events: all;
@@ -1751,16 +1725,12 @@ button {
   .process-timeline::before, .process-timeline::after { display: none; }
   .footer-main-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-card, .gallery-card-wide { grid-column: span 1; }
-  .gallery-card-wide { grid-column: span 2; }
   .footer-cta-card { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 640px) {
   .section { padding: 4rem 0; }
   .services-grid, .process-timeline, .footer-main-grid, .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-card-wide { grid-column: span 1; }
-  .gallery-multi-photos { grid-template-columns: repeat(2, 1fr); height: 260px; }
   .hero-trust-bar { grid-template-columns: 1fr; }
   .calculator-form, .calculator-result { padding: 1.8rem; }
   .about-floating-stat { position: static; margin-top: 1.2rem; max-width: 100%; }

@@ -15,7 +15,7 @@ assets/video/hero.mp4 vídeo de fundo do hero (não vai neste pacote: mantenha o
 | O que mudar | Onde |
 |---|---|
 | Número do WhatsApp | `WHATSAPP` no topo do `main.js` e os links `wa.me/` no `index.html` |
-| Cidades atendidas | `.city-list`, a pergunta do FAQ e `areaServed` no `index.html` |
+| Região de atendimento | seção `#atuacao`, FAQ e resposta do chat (sem nomes de cidades) |
 | Cores | variáveis `:root` no começo do `style.css` |
 | Foto da seção "Sobre" quadrada | trocar `class="about-media reveal"` por `class="about-media sq reveal"` |
 | Mapa | `src` do iframe em `#atuacao` (troque `q=Cianorte,+PR` pelo endereço e use `z=15`) |
@@ -24,14 +24,13 @@ assets/video/hero.mp4 vídeo de fundo do hero (não vai neste pacote: mantenha o
 | Arquivo | Usado em |
 |---|---|
 | `sobre-picape.jpg` | Sobre |
-| `trabalho-treinamento.jpg`, `trabalho-equipamentos.jpg`, `trabalho-equipe.jpg`, `trabalho-atendimento.jpg` | Nosso trabalho |
-| `area-forro.jpg`, `area-caixa-concreto.jpg`, `area-caixa-telhado.jpg`, `area-torre.jpg` | Nosso trabalho > Área de aplicação |
+| `trabalho-treinamento.jpg` (foto real do treinamento), `trabalho-equipamentos.jpg`, `trabalho-equipe.jpg`, `trabalho-atendimento.jpg`, `area-forro.jpg`, `area-caixa-concreto.jpg` | Galeria "Nosso trabalho" (6 cards quadrados) |
 | `frota.jpg` | Onde atuamos |
 | `logo.png` | Cabeçalho e rodapé |
 | `favicon.png`, `apple-touch-icon.png` | Aba do navegador e atalho no celular |
-| `hero-poster.jpg` | Imagem exibida enquanto o vídeo carrega (a sua, já existente) |
+| `hero-poster.jpg` | Imagem exibida enquanto o vídeo carrega |
 
-Arquivos antigos que não são mais usados e podem ser apagados: `aplicacao-jardim.jpg`, `marcelo-fachada.jpg`, `nebulizacao.jpg`, e as pastas `css` e `js` (os arquivos agora ficam na raiz), além da pasta literal `{css,js,assets\img,assets\video}`.
+A pasta `_fotos-nao-usadas/` guarda fotos que ficaram fora do site (podem ser apagadas ou usadas depois). Não precisa subir na Vercel.
 
 ## Vídeo do hero
 ```
