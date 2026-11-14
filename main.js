@@ -69,9 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fill();
       });
 
-      if (!document.hidden) requestAnimationFrame(render);
+      if (!document.hidden) requestAnimationFrame(render); else running = false;
     }
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+    let running = true;
+    document.addEventListener('visibilitychange', () => { if (!document.hidden && !running) { running = true; render(); } });
     render();
   }
 
@@ -187,6 +188,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = $$('.nav-link');
     const sections = $$('section[id], footer[id]');
 
+    let tops = [];
+    const measure = () => { tops = sections.map(s => s.offsetTop); };
+    measure();
+    window.addEventListener('load', measure);
+    window.addEventListener('resize', measure, { passive: true });
+
     const onScroll = () => {
       const scrollY = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -200,10 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       let currentId = '';
-      sections.forEach(sec => {
-        if (scrollY >= sec.offsetTop - 130) {
-          currentId = sec.getAttribute('id');
-        }
+      sections.forEach((sec, i) => {
+        if (scrollY >= tops[i] - 130) currentId = sec.id;
       });
 
       navLinks.forEach(link => {
@@ -211,7 +216,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { onScroll(); ticking = false; });
+    }, { passive: true });
     onScroll();
 
     const yearEl = $('#year');
@@ -493,6 +503,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (timeline) observer.observe(timeline);
   }
 
+  /* Vídeo do hero: só carrega após a página pronta e se a conexão/preferências permitirem */
+  function initHeroVideo() {
+    const video = $('.hero-video');
+    if (!video || !video.dataset.src) return;
+    const conn = navigator.connection || {};
+    if (prefersReducedMotion || conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '')) return;
+    const load = () => {
+      video.src = video.dataset.src;
+      const p = video.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    if (document.readyState === 'complete') setTimeout(load, 300);
+    else window.addEventListener('load', () => setTimeout(load, 300), { once: true });
+  }
+
   // Inicialização de Todos os Recursos
   initAmbientCanvas();
   initGallery3DTilt();
@@ -505,4 +530,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initRiskCalculator();
   initFaq();
   initScrollReveal();
+  initHeroVideo();
 });

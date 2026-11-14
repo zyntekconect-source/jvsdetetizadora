@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="js">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,9 @@
   
   <meta name="description" content="JVS Dedetizadora: dedetização, desratização e limpeza de caixas d'água com laudos técnicos e licença sanitária no Paraná e região. Fale com nossa equipe técnica.">
   <meta name="theme-color" content="#0A192F">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" as="image" href="assets/img/hero-poster.jpg" fetchpriority="high">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -34,6 +37,7 @@
     "name": "JVS Dedetizadora",
     "description": "Dedetização, desratização e limpeza de caixa d'água com laudo técnico e licença sanitária.",
     "telephone": ["+55-44-99123-6675", "+55-44-99963-7441"],
+    "sameAs": ["https://www.instagram.com/jvsdedetizadora/"],
     "areaServed": {"@type": "State", "name": "Paraná"}
   }
   </script>
@@ -199,9 +203,7 @@
   <main id="conteudo">
     <!-- Seção Hero -->
     <section class="hero" id="inicio">
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
-        <source src="assets/video/hero.mp4" type="video/mp4">
-      </video>
+      <video class="hero-video" autoplay muted loop playsinline preload="none" poster="assets/img/hero-poster.jpg" data-src="assets/video/hero.mp4" aria-hidden="true" tabindex="-1"></video>
       <div class="hero-overlay"></div>
       <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
 
@@ -257,7 +259,7 @@
         <div class="about-grid">
           <div class="about-media reveal">
             <div class="about-image-wrapper">
-              <img src="assets/img/sobre-picape.jpg" alt="Picape da JVS Dedetizadora com escada, mangueira e pulverizador costal" width="1400" height="1050" loading="lazy">
+              <img src="assets/img/sobre-picape.jpg" alt="Picape da JVS Dedetizadora com escada, mangueira e pulverizador costal" width="1000" height="750" loading="lazy">
               <div class="about-image-badge">
                 <svg class="ic"><use href="#shield"/></svg>
                 <span>Uso de bombas elétricas</span>
@@ -594,7 +596,7 @@
           <article class="gallery-card tilt-card reveal">
             <div class="tilt-glow"></div>
             <div class="gallery-img-box">
-              <img src="assets/img/trabalho-equipe.jpg" onerror="this.onerror=null;this.src='assets/img/nebulizacao.jpg'" alt="Técnico da JVS com touca e luvas aplicando gel em armário de cozinha" width="720" height="960" loading="lazy" decoding="async" style="object-position:center 30%">
+              <img src="assets/img/trabalho-equipe.jpg" alt="Técnico da JVS com touca e luvas aplicando gel em armário de cozinha" width="720" height="960" loading="lazy" decoding="async" style="object-position:center 30%">
               <div class="gallery-tag">Aplicação Discreta</div>
             </div>
             <div class="gallery-body">
@@ -606,7 +608,7 @@
           <article class="gallery-card tilt-card reveal">
             <div class="tilt-glow"></div>
             <div class="gallery-img-box">
-              <img src="assets/img/trabalho-atendimento.jpeg" alt="Fachada da JVS Dedetizadora com serviços e telefones na vitrine" width="720" height="960" loading="lazy" decoding="async" style="object-position:center 72%">
+              <img src="assets/img/trabalho-atendimento.jpeg" alt="Fachada da JVS Dedetizadora com serviços e telefones na vitrine" width="720" height="957" loading="lazy" decoding="async" style="object-position:center 72%">
               <div class="gallery-tag">Atendimento Direto</div>
             </div>
             <div class="gallery-body">
@@ -630,7 +632,7 @@
           <article class="gallery-card tilt-card reveal">
             <div class="tilt-glow"></div>
             <div class="gallery-img-box">
-              <img src="assets/img/area-caixa-concreto.jpeg" alt="Caixa d'água de concreto aberta para limpeza, com a caixa de ferramentas da JVS" width="720" height="960" loading="lazy" decoding="async" style="object-position:center 60%">
+              <img src="assets/img/area-caixa-concreto.jpeg" alt="Caixa d'água de concreto aberta para limpeza, com a caixa de ferramentas da JVS" width="720" height="957" loading="lazy" decoding="async" style="object-position:center 60%">
               <div class="gallery-tag">Caixas d'Água</div>
             </div>
             <div class="gallery-body">
@@ -785,7 +787,7 @@
             </p>
 
             <figure class="fleet-showcase">
-              <img src="assets/img/frota.jpg" alt="Duas utilitárias brancas da JVS Dedetizadora estacionadas" width="1200" height="800" loading="lazy">
+              <img src="assets/img/frota.jpg" alt="Duas utilitárias brancas da JVS Dedetizadora estacionadas" width="1000" height="562" loading="lazy">
               <figcaption>
                 <svg class="ic"><use href="#ok"/></svg>
                 <span>Frota própria até o seu endereço</span>
@@ -977,7 +979,7 @@
 
       <div class="footer-bottom-bar">
         <span>&copy; <span id="year"></span> JVS Dedetizadora. Todos os direitos reservados.</span>
-        <span>Desenvolvido por <strong>Zyntek</strong></span>
+        <span>Desenvolvido por <strong><a href="https://www.zyntekconnect.com.br/" target="_blank" rel="noopener">Zyntek</a></strong></span>
       </div>
     </div>
   </footer>
@@ -1015,7 +1017,7 @@
             <span class="hub-arrow">&rarr;</span>
           </a>
 
-          <a class="hub-channel-btn hub-btn-ig" href="https://instagram.com" target="_blank" rel="noopener">
+          <a class="hub-channel-btn hub-btn-ig" href="https://www.instagram.com/jvsdedetizadora/" target="_blank" rel="noopener">
             <svg class="ic"><use href="#instagram"/></svg>
             <div>
               <strong>Instagram Oficial</strong>
