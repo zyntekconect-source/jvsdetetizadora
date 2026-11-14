@@ -1745,7 +1745,7 @@ button {
   .walker, .roaches, .radar-scan, .ambient-canvas { display: none !important; }
 }
 /* Performance: não renderiza seções fora da tela até chegarem perto */
-.section-gallery, .section-coverage, .section-faq, .site-footer { content-visibility: auto; contain-intrinsic-size: auto 800px; }
+.section-coverage, .section-faq { content-visibility: auto; contain-intrinsic-size: auto 800px; }
 
 /* Seleção de texto na cor da marca */
 ::selection { background: var(--acc); color: #fff; }
@@ -1776,4 +1776,30 @@ button {
   text-align: center;
   gap: .4rem;
   padding: 1.6rem 1rem 6rem;
+}
+
+/* Rodapé: bloco laranja (CTA) sempre completo, acima da linha */
+.footer-cta-card { position: relative; z-index: 2; }
+
+/* Linha laranja pulsante na divisão do rodapé */
+.site-footer::before,
+.footer-bottom-bar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 1;
+  background: linear-gradient(90deg, transparent 0%, var(--acc) 25%, #FFC2A3 50%, var(--acc) 75%, transparent 100%);
+  background-size: 200% 100%;
+  box-shadow: 0 0 14px var(--acc-glow);
+  animation: footerLineFlow 3.5s linear infinite, footerLinePulse 2.2s ease-in-out infinite;
+  pointer-events: none;
+}
+.footer-bottom-bar { position: relative; border-top: 0; padding: 1.6rem 1rem; }
+.footer-bottom-bar::before { height: 2px; }
+@keyframes footerLineFlow { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes footerLinePulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@media (max-width: 900px) { .footer-bottom-bar { padding-bottom: 5.5rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .site-footer::before, .footer-bottom-bar::before { animation: none; opacity: .9; }
 }
